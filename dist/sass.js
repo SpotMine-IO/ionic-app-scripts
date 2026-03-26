@@ -10,7 +10,7 @@ const config_1 = require("./util/config");
 const logger_1 = require("./logger/logger");
 const logger_sass_1 = require("./logger/logger-sass");
 const logger_diagnostics_1 = require("./logger/logger-diagnostics");
-const node_sass_1 = require("node-sass");
+const sass_1 = require("sass");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
 function sass(context, configFile) {
@@ -203,7 +203,7 @@ function render(context, sassConfig) {
         if (sassConfig.sourceMap) {
             sassConfig.sourceMapContents = true;
         }
-        node_sass_1.render(sassConfig, (sassError, sassResult) => {
+        sass_1.render(sassConfig, (sassError, sassResult) => {
             const diagnostics = logger_sass_1.runSassDiagnostics(context, sassError);
             if (diagnostics.length) {
                 logger_diagnostics_1.printDiagnostics(context, logger_diagnostics_1.DiagnosticsType.Sass, diagnostics, true, true);

@@ -7,7 +7,7 @@ import { fillConfigDefaults, getUserConfigFile, replacePathVars } from './util/c
 import { Logger } from './logger/logger';
 import { runSassDiagnostics } from './logger/logger-sass';
 import { printDiagnostics, clearDiagnostics, DiagnosticsType } from './logger/logger-diagnostics';
-import { SassError, render as nodeSassRender, Result } from 'node-sass';
+import { LegacyException as SassError, render as nodeSassRender, LegacyResult as Result } from 'sass';
 import * as postcss from 'postcss';
 import * as autoprefixer from 'autoprefixer';
 
